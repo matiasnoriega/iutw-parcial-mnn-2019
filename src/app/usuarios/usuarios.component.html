@@ -1,13 +1,17 @@
 <h2>Usuarios</h2>
 
 <div class="container-fluid">
-  <button class="btn btn-sm btn-primary" (click)="traerUsuarios()">Traer Usuarios</button>
+	<button class="btn btn-sm btn-primary" (click)="traerUsuarios()">Traer Usuarios</button>
 </div>
 
-<div *ngIf="usuarios">
-  <ul>
-    <li *ngFor="let usuario of usuarios">
-      <p>{{usuario.first_name}}</p>
-    </li>
-  </ul>
+<div *ngIf="usuarios" class="container-fluid">
+<ul class="list-unstyled">
+  <li class="media" *ngFor="let usuario of usuarios" > 
+    <img src="{{usuario.avatar}}" class="mr-3" alt="{{usuario.first_name}}">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">{{usuario.last_name}}, {{usuario.first_name}}</h5>
+      {{usuario.email}}
+    </div>
+  </li>
+</ul>
 </div>
