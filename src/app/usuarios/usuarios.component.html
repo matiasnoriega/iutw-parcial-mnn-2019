@@ -1,5 +1,13 @@
 <h2>Usuarios</h2>
 
 <div class="container-fluid">
-  <button class="btn btn-sm btn-primary">Traer Usuarios</button>
+  <button class="btn btn-sm btn-primary" (click)="traerUsuarios()">Traer Usuarios</button>
+</div>
+
+<div *ngIf="usuarios">
+  <ul>
+    <li *ngFor="let usuario of usuarios">
+      <p>{{usuario.first_name}}</p>
+    </li>
+  </ul>
 </div>

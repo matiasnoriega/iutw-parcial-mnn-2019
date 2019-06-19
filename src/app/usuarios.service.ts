@@ -3,6 +3,12 @@ import { Observable, of } from 'rxjs';
 import { Usuario } from './usuario';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
+
 @Injectable(
   {
     providedIn: 'root'
@@ -17,8 +23,8 @@ export class UsuariosService {
     private http: HttpClient
   ) { }
 
-  getUsuarios(): Observable<Usuario[]>{
-      return this.http.get<Usuario[]>(this.url);
+  traerUsuarios(): Observable<Usuario[]>{
+      return this.http.get<Usuario[]>(this.url, httpOptions);
   }
 
 }

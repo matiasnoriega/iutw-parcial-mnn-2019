@@ -7,6 +7,7 @@ import { UsuariosService } from '../usuarios.service';
   templateUrl: './usuarios.component.html',
   styleUrls: ['./usuarios.component.css']
 })
+
 export class UsuariosComponent implements OnInit {
 
   usuarios: Usuario[];
@@ -18,8 +19,8 @@ export class UsuariosComponent implements OnInit {
   ngOnInit() {
   }
 
-  getUsuarios(): void{
-    this.usuariosService.getUsuarios().subscribe(usuarios => this.usuarios);
+  traerUsuarios(): void{
+    this.usuariosService.traerUsuarios().subscribe(usuarios => this.usuarios);
   }
 
 }
