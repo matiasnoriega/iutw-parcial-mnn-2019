@@ -1,5 +1,5 @@
 <h1>Usuarios</h1>
-<label for="cantidad"> Cantidad de Usuarios por Pagina
+<label for="cantidad"> Usuarios Maximos
 <select  class="form-control my-1 form-control-sm" #cantidad (change)="traerUsuarios(cantidad.value)">
   <option value="3" selected>3</option>
   <option value="5">5</option>
@@ -11,15 +11,7 @@
 <div *ngIf="usuarios" class="container-fluid">
   <div class="row">
     <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let usuario of usuarios" > 
-      <div class="card">
-        <img src="{{usuario.avatar}}" class="card-img-top" alt="{{usuario.first_name}}">
-        <div class="card-body">
-          <h5 class="card-title">#{{usuario.id}} {{usuario.last_name}}, {{usuario.first_name}}</h5>
-          
-          <p class="card-text"><i class="material-icons">email</i><span> {{usuario.email}}</span></p>
-        </div>
-      </div>
-      <br>
+      <app-usuario [usuario]="usuario"></app-usuario>
     </div>
   </div>
 </div>

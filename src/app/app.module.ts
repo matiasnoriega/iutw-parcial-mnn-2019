@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { UsuariosService } from './usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpClientModule, AppRoutingModule ],
-  declarations: [ AppComponent, UsuariosComponent ],
+  declarations: [ AppComponent, UsuariosComponent, UsuarioComponent ],
   bootstrap:    [ AppComponent ],
   providers: [UsuariosService]
 })
