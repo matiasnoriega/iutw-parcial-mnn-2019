@@ -1,23 +1,17 @@
-<h2>Usuarios</h2>
+<h1>Usuarios</h1>
 
-<div class="container-fluid">
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-primary" routerLink="/usuarios">Traer Usuarios</button>
-  </div>
-</div>
-<br>
 <div *ngIf="usuarios" class="container-fluid">
   <div class="row">
     <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let usuario of usuarios" > 
       <div class="card">
-        <img src="{{usuario.avatar}}" class="rounded card-img-top" alt="{{usuario.first_name}}">
+        <img src="{{usuario.avatar}}" class="card-img-top" alt="{{usuario.first_name}}">
         <div class="card-body">
-          <h5 class="card-title">{{usuario.last_name}}, {{usuario.first_name}}</h5>
-          <p class="card-text">{{usuario.email}}</p>
+          <h5 class="card-title">#{{usuario.id}} {{usuario.last_name}}, {{usuario.first_name}}</h5>
+          
+          <p class="card-text"><i class="material-icons">email</i><span> {{usuario.email}}</span></p>
         </div>
       </div>
       <br>
     </div>
   </div>
 </div>
-<router-outlet></router-outlet>

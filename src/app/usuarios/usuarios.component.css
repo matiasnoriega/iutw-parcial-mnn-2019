@@ -16,3 +16,12 @@ nav a:hover {
 nav a.active {
   color: #039be5;
 }
+.card {
+  box-shadow: 3px 3px 3px grey;
+}
+.card-text span{
+  vertical-align: middle;
+}
+.card-text i{
+  vertical-align: middle;
+}

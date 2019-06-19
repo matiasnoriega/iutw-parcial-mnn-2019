@@ -17,6 +17,7 @@ export class UsuariosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.traerUsuarios();
   }
 
   traerUsuarios(): void{
