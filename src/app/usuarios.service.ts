@@ -18,14 +18,14 @@ const httpOptions = {
 
 export class UsuariosService {
 
-  private urlUsuarios = 'https://reqres.in/api/users?per_page=10';
+  private urlUsuarios = 'https://reqres.in/api/users';
 
   constructor(
     private http: HttpClient
   ) { }
 
-  traerUsuarios(): Observable<Usuario[]>{
-      return this.http.get<Usuario[]>(this.urlUsuarios).pipe(
+  traerUsuarios(per_page: number): Observable<Usuario[]>{
+      return this.http.get<Usuario[]>(this.urlUsuarios + `?per_page=${per_page}`).pipe(
         pluck('data'));      
   }
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Usuario } from '../usuario';
 import { UsuariosService } from '../usuarios.service';
+
 
 @Component({
   selector: 'app-usuarios',
@@ -10,6 +11,8 @@ import { UsuariosService } from '../usuarios.service';
 
 export class UsuariosComponent implements OnInit {
 
+  cantidad: number;
+
   usuarios: Usuario[];
 
   constructor(
@@ -17,11 +20,11 @@ export class UsuariosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.traerUsuarios();
+    this.traerUsuarios(this.cantidad);
   }
 
-  traerUsuarios(): void{
-    this.usuariosService.traerUsuarios().subscribe(usuarios => this.usuarios = usuarios)
+  traerUsuarios(per_page: number): void{
+    this.usuariosService.traerUsuarios(per_page).subscribe(usuarios => this.usuarios = usuarios)
   }
 
 }
