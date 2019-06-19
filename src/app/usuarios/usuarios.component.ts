@@ -21,7 +21,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   traerUsuarios(): void{
-    this.usuariosService.traerUsuarios().subscribe(usuarios => this.usuarios = usuarios['data']);
+    this.usuariosService.traerUsuarios().subscribe(usuarios => this.usuarios = usuarios)
   }
 
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of, from } from 'rxjs';
 import { Usuario } from './usuario';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map, switchMap } from 'rxjs/operators';
+import { pluck } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -25,7 +25,7 @@ export class UsuariosService {
   ) { }
 
   traerUsuarios(): Observable<Usuario[]>{
-      return this.http.get<Usuario[]>(this.urlUsuarios).pipe();
+      return this.http.get<Usuario[]>(this.urlUsuarios).pipe(
+        pluck('data'));      
   }
-
 }
