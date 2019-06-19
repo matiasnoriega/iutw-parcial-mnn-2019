@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  titulo = 'IUTW - Parcial 1er Cuatrimestre 2019 - Matías Nicolás Noriega';
+  
 }

@@ -1,17 +1,19 @@
-<h1>Usuarios</h1>
-<label for="cantidad"> Usuarios Maximos
-<select  class="form-control my-1 form-control-sm" #cantidad (change)="traerUsuarios(cantidad.value)">
-  <option value="3" selected>3</option>
-  <option value="5">5</option>
-  <option value="10">10</option>
-  <option value="20">20</option>
-</select>
-</label>
-<br>
-<div *ngIf="usuarios" class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let usuario of usuarios" > 
-      <app-usuario [usuario]="usuario"></app-usuario>
+<div class="container">
+  <h1>Usuarios</h1>
+  <label for="cantidad"> Usuarios Maximos
+  <select  class="form-control my-1 form-control-sm" #cantidad (change)="traerUsuarios(cantidad.value)">
+    <option value="3" selected>3</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="20">20</option>
+  </select>
+  </label>
+  <br>
+  <div *ngIf="usuarios" class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let usuario of usuarios" > 
+        <app-usuario [usuario]="usuario"></app-usuario>
+      </div>
     </div>
   </div>
 </div>

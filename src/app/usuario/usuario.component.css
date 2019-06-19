@@ -1,0 +1,9 @@
+.card {
+  box-shadow: 2px 2px 1px darkgray;
+}
+.card-text span{
+  vertical-align: middle;
+}
+.card-text i{
+  vertical-align: middle;
+}
