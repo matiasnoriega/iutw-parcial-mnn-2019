@@ -1,15 +1,23 @@
 <div class="container">
   <h1>Usuarios</h1>
-  <label for="cantidad"> Usuarios Maximos
-  <select  class="form-control my-1 form-control-sm" #cantidad (change)="traerUsuarios(cantidad.value)">
-    <option value="3" selected>3</option>
-    <option value="5">5</option>
-    <option value="10">10</option>
-    <option value="20">20</option>
-  </select>
-  </label>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <form class="form-inline">
+        <label for="cantidad" class="my-1 mr-2"> Usuarios Maximos</label>
+        <select  class="custom-select my-1" #cantidad (change)="traerUsuarios(cantidad.value)">
+          <option value="3" selected>3</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+        </select>
+      </form>      
+    </div>
+    <div class="col-4">
+      <button class="btn btn-secondary" routerLink="/">Cerrar</button>
+    </div>
+  </div>
   <br>
-  <div *ngIf="usuarios" class="container-fluid">
+  <div *ngIf="usuarios" class="container">
     <div class="row">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let usuario of usuarios" > 
         <app-usuario [usuario]="usuario"></app-usuario>
